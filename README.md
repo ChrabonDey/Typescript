@@ -1,12 +1,12 @@
 
 
-# 🔐  `keyof` in TypeScript: Type-Safe Property Access Made Easy
+#   `keyof` in TypeScript: Type-Safe Property Access Made Easy
 
 When working with complex JavaScript objects, how often have you second-guessed whether a key exists or not? TypeScript offers a powerful solution: the `keyof` operator. In this post, we’ll break down what `keyof` does, how it's different from using an object directly, and how you can leverage it with generics to build safer, smarter code.
 
 ---
 
-## 🧠 What Is `keyof` in TypeScript?
+##  What Is `keyof` in TypeScript?
 
 In TypeScript, the `keyof` operator lets you extract the **keys of a type** as a **union of string literals**. This might sound technical, but it’s extremely useful. It’s like telling TypeScript, *“Hey, give me a list of all valid keys for this object type.”*
 
@@ -32,18 +32,18 @@ Notice how we passed the **type** (`typeof account`) to `keyof`, not the object 
 
 ---
 
-## 🎯 Why Use `keyof`?
+##  Why Use `keyof`?
 
 Using `keyof` comes with a number of advantages:
 
-* ✅ **Type safety**: Ensures only valid keys are accessed.
-* 🧩 **Narrowing and constraining types**: Prevents bugs by catching incorrect property names at compile time.
-* 🔄 **Reusability**: Works well with generics to create flexible utility functions.
-* 💡 **Self-documenting code**: Makes your functions' expected input more obvious.
+*  **Type safety**: Ensures only valid keys are accessed.
+*  **Narrowing and constraining types**: Prevents bugs by catching incorrect property names at compile time.
+*  **Reusability**: Works well with generics to create flexible utility functions.
+* **Self-documenting code**: Makes your functions' expected input more obvious.
 
 ---
 
-## 🛠️ `keyof` + Generics = Type-Safe Magic
+## `keyof` + Generics = Type-Safe Magic
 
 One of the most powerful patterns is using `keyof` inside a generic function. Let’s say you want to get a property from an object dynamically, but you want TypeScript to protect you from typos or invalid keys.
 
@@ -87,18 +87,18 @@ You get no autocomplete, no validation, and a higher risk of bugs.
 
 ---
 
-## 🧪 Final 
+##  Final 
 
 The `keyof` operator might seem like a small feature, but it packs a powerful punch when it comes to **writing maintainable, scalable, and bug-resistant TypeScript code**. Whether you're accessing properties dynamically, building generic utilities, or validating API responses, `keyof` ensures you're always on safe ground.
 
 ---
 
 
-
+# `null`, `never`, and `unknown`
 
 ---
 
-# 🤔 Understanding `null`, `never`, and `unknown` in TypeScript
+# Understanding `null`, `never`, and `unknown` in TypeScript
 
 When writing TypeScript, you're likely to come across some special types like `null`, `never`, and `unknown`. While they might look simple, they each serve unique purposes and help you write safer, more precise code.
 
@@ -106,7 +106,7 @@ In this post, we’ll break them down with examples and show when—and why—yo
 
 ---
 
-## ❌ `null`: Absence of a Value
+##  `null`: Absence of a Value
 
 The `null` type represents **intentional absence** of any object value. It’s a valid value that means “nothing here.”
 
@@ -123,11 +123,11 @@ userName = "Alice"; // now it has a value
 * When you expect a value to be **optionally absent**
 * When dealing with APIs or databases that might return `null`
 
-> ✅ Pro Tip: Use `strictNullChecks` in your `tsconfig.json` to ensure TypeScript doesn’t silently accept `null` where it shouldn’t.
+>  Pro Tip: Use `strictNullChecks` in your `tsconfig.json` to ensure TypeScript doesn’t silently accept `null` where it shouldn’t.
 
 ---
 
-## 🚫 `never`: The Type That Should Never Happen
+##  `never`: The Type That Should Never Happen
 
 The `never` type represents **values that never occur**. A function that **throws an error** or **never finishes execution** will have a return type of `never`.
 
@@ -163,11 +163,11 @@ function getArea(shape: Shape) {
 }
 ```
 
-> 🧠 `never` is useful to **prevent unhandled cases** and catch logic errors during development.
+>  `never` is useful to **prevent unhandled cases** and catch logic errors during development.
 
 ---
 
-## 🤷‍♂️ `unknown`: The Safe `any`
+##  `unknown`: The Safe `any`
 
 The `unknown` type is similar to `any`, but **safer**. You can assign anything to a variable of type `unknown`, but you **can’t use it** until you **narrow it** or **type-check it**.
 
@@ -194,11 +194,11 @@ if (typeof value === "string") {
 * When you’re **not sure about the type**, such as parsing data from APIs or external sources
 * When you want to **enforce validation** before using a variable
 
-> 🔐 `unknown` is a **type-safe** alternative to `any` that encourages proper checks before usage.
+> `unknown` is a **type-safe** alternative to `any` that encourages proper checks before usage.
 
 ---
 
-## 🧠 Recap: When to Use Each
+##  Recap: When to Use Each
 
 | Type      | Description                        | Use Case                             |
 | --------- | ---------------------------------- | ------------------------------------ |
@@ -208,7 +208,7 @@ if (typeof value === "string") {
 
 ---
 
-## 🎯 Final Thoughts
+##  Final 
 
 These three types—`null`, `never`, and `unknown`—may look simple, but they’re incredibly powerful when used correctly. They allow TypeScript to be precise and expressive, helping you build **bug-free and type-safe applications**.
 
